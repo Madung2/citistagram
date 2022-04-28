@@ -2,6 +2,37 @@
 .*{
     font-family: Billabong;
 }
+/*=================== navbar ====================*/
 .navbar{
-    background-color: #9370DB;
+    background-color: #c7b0ff;
+    display:flex;
+    justify-content: space-between;
 }
+.navbar-logo{
+    padding: 0;
+}
+
+.navbar_search{
+    padding:0;
+}
+
+.navbar_links{
+    font-size: 30px;
+    display: flex;
+    list-style: none;
+
+}
+
+.navbar_links li {
+    padding: 6px 15px;
+}
+
+.navbar_links li:hover {
+    background-color: violet;
+    border-radius: 8px;
+}
+/*=================== main page ====================*/
+.main_column {
+
+}
+
