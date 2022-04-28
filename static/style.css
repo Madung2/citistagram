@@ -1,5 +1,5 @@
 /*=================== fonts ====================*/
-.*{
+* {
     font-family: Billabong;
 }
 /*=================== navbar ====================*/
@@ -8,6 +8,8 @@
     display:flex;
     justify-content: space-between;
     position:fixed;
+    width: 100%;
+    z-index: 2;
 }
 .navbar-logo{
     padding: 0;
@@ -16,6 +18,8 @@
 .navbar_search{
     padding:0;
     border-radius:0;
+    border-color:#c7b0ff;
+    background-color: grey;
 }
 
 .navbar_links{
@@ -35,22 +39,94 @@
 }
 /*=================== main page ====================*/
 .main_page_all {
+    padding-top: 85px;
     display:flex;
     flex-direction:row;
     justify-content: center;
     text_align: center;
+    z-index: 1;
+
 }
 
 .main_column{
-    width:400px;
-    height:1000px;
+    width:650px;
+    height:100%;
     background-color: palevioletred;
+    margin-right:500px;
+    padding-top:37px;
+    width: 600px;
 }
 
 .side_column{
-    width: 400px;
+    width: 380px;
     height: 1000px;
     background-color: wheat;
-    p
+    position:fixed;
+    left:60%;
+
+}
+
+/*===================card====================*/
+.card{
+    margin-bottom:120px;
+}
+.card-top{
+    height: 50px;
+    display:flex;
+    justify-content: space-between;
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:15px;
+
+}
+.profile{
+    flex-direction:row;
+    width: 20%;
+
+}
+.profile_pic{
+    width:25px;
+    height:25px;
+    float:left;
+}
+
+.icon_bar{
+    margin:20px;
+    padding:0;
+    font-size: 30px;
+    display: flex;
+    list-style: none;
+}
+
+.icon_bar_left{
+    margin:0;
+    padding:0;
+    display:flex;
+    list-style: none;
+}
+.card-text{
+    padding-left:50px;
+
+}
+.card_bottom {
+    display: flex;
+    text_align: center;
+}
+.card_bottom textarea {
+    width:90%;
+}
+
+
+/*===================right column====================*/
+.list-group-item{
+    height:110px;
+}
+.name_list{
+    width: 100%;
+    float: left;
+}
+
+.namebox_change{
+    float: left;
 }
 
