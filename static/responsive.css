@@ -1,0 +1,7 @@
+@media screen and (max-width:650px) {
+	/* Home Banner Area css
+	============================================================================================ */
+    .navbar_search{
+        display:none;
+    }
+}
