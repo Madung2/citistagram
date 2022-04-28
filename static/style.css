@@ -1,0 +1,101 @@
+/*=================== fonts ====================*/
+* {
+    font-family: Billabong;
+}
+/*=================== navbar ====================*/
+.navbar{
+    background-color: #c7b0ff;
+    display:flex;
+    justify-content: space-between;
+    position:fixed;
+    width: 100%;
+    z-index: 2;
+}
+.navbar-logo{
+    padding: 0;
+}
+
+.navbar_search{
+    padding:0;
+    border-radius:0;
+    border-color:#c7b0ff;
+    background-color: grey;
+}
+
+.navbar_links{
+    font-size: 30px;
+    display: flex;
+    list-style: none;
+
+}
+
+.navbar_links li {
+    padding: 6px 15px;
+}
+
+.navbar_links li:hover {
+    background-color: violet;
+    border-radius: 8px;
+}
+/*=================== main page ====================*/
+.main_page_all {
+    padding-top: 85px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    text_align: center;
+    z-index: 1;
+
+}
+
+.main_column{
+    width:650px;
+    height:1000px;
+    background-color: palevioletred;
+    margin-right:500px;
+    padding-top:37px;
+    width: 600px;
+}
+
+.side_column{
+    width: 380px;
+    height: 1000px;
+    background-color: wheat;
+    position:fixed;
+    left:60%;
+
+}
+
+/*===================card====================*/
+.card-top{
+    height: 50px;
+    display:flex;
+    justify-content: space-between;
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:15px;
+
+}
+.profile{
+    flex-direction:row;
+    width: 20%;
+
+}
+.profile_pic{
+    width:25px;
+    height:25px;
+    float:left;
+}
+
+.icon_bar{
+    font-size: 20px;
+    display: flex;
+    list-style: none;
+}
+
+.icon_bar_left{
+    display:flex;
+    list-style: none;
+
+}
+
