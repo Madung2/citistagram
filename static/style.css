@@ -146,6 +146,15 @@
     height:25px;
     float:left;
 }
+.profile_name {
+    color: #C7B0FFFF
+}
+
+.profile_name :hover {
+    color:#88F3FFFF;
+}
+
+
 .modal_button{
     background-color:transparent;
     border:none
