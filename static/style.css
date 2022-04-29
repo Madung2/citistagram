@@ -59,6 +59,9 @@
     background-color: #221F4BFF;
     border-radius: 2px;
 }
+.navbar_links li a i{
+    color:antiquewhite;
+}
 /*=================== main page ====================*/
 .main_page_all {
     padding-top: 85px;
@@ -92,6 +95,26 @@
     margin-left:130px;
 
 }
+/*===================modal====================*/
+.modal-content{
+    background-color: #080615;
+    border: 1px solid antiquewhite;
+}
+.modal-header{
+    justify-content:center;
+}
+.modal-title{
+    width:100%;
+    text-align:center;
+}
+.modal-footer{
+    justify-content:center;
+}
+.modal_dismiss_button{
+    background-color:#080615;
+    color:#c7b0ff;
+    border:none;
+}
 
 /*===================card====================*/
 .card{
@@ -121,6 +144,10 @@
     height:25px;
     float:left;
 }
+.modal_button{
+    background-color:transparent;
+    border:none
+}
 
 .icon_bar{
     margin:10px 23px 20px 20px;
@@ -140,7 +167,7 @@
 
 }
 
-.icon_bar_left li a i{color:#88F3FFFF}
+.icon_bar_left li a i{color:#766DFFFF}
 
 .icon_bar_left li:hover a{
     background-image: -moz-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
@@ -177,7 +204,7 @@
     height:40px;
     padding-left:14px;
     margin-top: 10px;
-    padding-top: 20px
+    padding-top: 20px;
     display:flex;
     line_height:40px;
 }
