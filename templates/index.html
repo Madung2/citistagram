@@ -3,7 +3,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
-    <title>반응형 웹 공부</title>
+    <title>Citistagram</title>
     <script src="https://use.fortawesome.com/99966411.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
@@ -30,14 +30,13 @@
 <body>
 <!--================1.Navbar파트====================-->
     <nav class="navbar">
-        <div class="navbar_logo">
-            <a class="navbar-brand logo_h" href="/static">
-                <img class="img_logo"
-                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F26X4T%2FbtrADSUYPCB%2FoFUteKiKBFc8EVOXzEKBx1%2Fimg.png"
-                     alt="로고 이미지">
-            </a>
+        <a class="navbar-brand logo_h" href="/static">
+            <img class="img_logo"
+                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbE4ej%2FbtrAKikSqo1%2FnNGCSsG8KBn96rbIEaftZ1%2Fimg.png"
+                 alt="로고 이미지">
+        </a>
 
-        </div>
+
         <div class="navbar_search">
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -45,7 +44,6 @@
         </div>
         <ul class="navbar_links">
             <li><a href=""><i class="fa fa-home-fi"></i></a></li>
-            <li><a href=""><i class="fa fa-paper-plane"></i></a></li>
             <li><a href=""><i class="fa fa-plus"></i></a></li>
             <li><a href=""><i class="fa fa-compass"></i></a></li>
             <li><a href=""><i class="fa fa-heart"></i></a></li>
@@ -53,7 +51,7 @@
     </nav>
 <!--================1.Navbar END====================-->
 
-<!--================2. 메인 화면====================-->
+<!--================2.메인 카드 섹션==================-->
 <div class="main_page_all">
     <div class="main_column">
 
@@ -62,11 +60,10 @@
                 <div class="profile">
                     <img class="profile_pic"
                      src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png" alt="프로필 사진">
-                    <p style="padding-left:30px;">Tasha Han</p>
+                    <p style="padding-left:38px; color: #766DFFFF">Tasha Han</p>
                 </div>
-
                 <div>
-                    <i class="fa fa-dots-three-horizontal"></i>
+                    <i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i>
                 </div>
 
             </div>
@@ -107,8 +104,8 @@
             <div class="card_body">
                 <div class="icon_bar">
                     <ul class="icon_bar_left">
-                        <li><a href=""><i class="fa fa-heart"></i></a></li>
-                        <li><a href=""><i class="fa fa-chat-bubble"></i></a></li>
+                        <li style="margin-right:30px"><a href=""><i class="fa fa-heart"></i></a></li>
+                        <li style="margin-right:25px"><a href=""><i class="fa fa-chat-bubble"></i></a></li>
                         <li><a href=""><i class="fa fa-paper-plane"></i></a></li>
                     </ul>
                     <i class="fa fa-bookmark"></i>
@@ -121,7 +118,7 @@
                     <p>1시간 전</p>
                 </div>
                 <div class="card_bottom">
-                    <textarea class="form-control" placeholder="" id="comment" style="height: 80px">댓글 달기</textarea> <a href="">게시</a>
+                    <textarea class="form-control" placeholder="" id="comment" rows="1">댓글 달기</textarea> <a href="">게시</a>
                 </div>
             </div>
         </div>
@@ -189,7 +186,10 @@
                     <p>1시간 전</p>
                 </div>
                 <div class="card_bottom">
-                    <textarea class="form-control" placeholder="" id="comment" style="height: 80px">댓글 달기</textarea> <a href="">게시</a>
+                    <textarea class="form-control" placeholder="" id="comment" style="height: 80px">댓글 달기</textarea>
+
+                    <a href="">게시</a>
+
                 </div>
             </div>
         </div>
@@ -262,47 +262,82 @@
             </div>
         </div>
     </div>
+
+
+<!--================2.메인 카드 섹션 END===============-->
+<!--================3. 사이드 바 START=================-->
+
     <div class="side_column">
-        Right
 
         <div class="name_list" >
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <img class="profile_pic"
-                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png" alt="프로필 사진">
-                    <p>Tasha Han</p>
-                    <p>예스리</p>
-                    <p class="namebox_change">전환</p>
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px;">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
                 </li>
                 <li class="list-group-item">
-                    <img class="profile_pic"
-                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png" alt="프로필 사진">
-                    <p>Tasha Han</p>
-                    <p>예스리</p>
-                    <p>전환</p>
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px;">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
                 </li>
                 <li class="list-group-item">
-                    <img class="profile_pic"
-                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png" alt="프로필 사진">
-                    <p>Tasha Han</p>
-                    <p>예스리</p>
-                    <p>전환</p>
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px;">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
                 </li>
                 <li class="list-group-item">
-                    <img class="profile_pic"
-                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png" alt="프로필 사진">
-                    <p>Tasha Han</p>
-                    <p>예스리</p>
-                    <p>전환</p>
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px;">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
                 </li>
-                <p>소개, 도움말, 홍보센터, Api, 채용정보</p>
-                <p>CITISTAGRAM FROM TASHA</p>
             </ul>
         </div>
     </div>
 </div>
 
-
+<!--================3. 사이드 바 END==================-->
+<!--================4. FOOTER START==================-->
+<div class="footer">
+    안녕하세요
+</div>
+<!--================4. FOOTER END==================-->
 
 
 </body>
