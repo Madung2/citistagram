@@ -4,10 +4,23 @@
     .navbar_search{
         display:none;
     }
+    .main_column{
+        width:388px;
+    }
 }
 
 @media screen and (max-width:820px) {
     .side_column{
         display:none;
     }
+    .main_column{
+        margin-right:0;
+    }
+
+@media screen and (max-width:388px) {
+    .main_column{
+        width:150px;
+    }
 }
+}
+

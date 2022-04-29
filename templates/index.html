@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <title>Citistagram</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://use.fortawesome.com/99966411.js"></script>
+
+    <!-- main css -->
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/responsive.css">
+
+    <!--script-->
+    <script>
+
+         $(document).ready(function(){
+            show_comment()
+        });
+
+        function show_comment() {
+            $.ajax({
+                type: "GET",
+                url: "/insta_comment",
+                data: {},
+                success: function (response) {
+                    let rows = response['comments']
+                    for (let i = 0; i < rows.length; i++) {
+                        let comment = rows[i]['comment']
+                        console.log(comment)
+                        let temp_html = `<p>${comment}</p>`
+                        $('#comment-lists').append(temp_html)
+                    }
+                }
+            });
+        }
+        function save_comment() {
+            let comment = $('#uploading_comment').val()
+            $.ajax({
+                type: 'POST',
+                url: '/insta_comment',
+                data: {comment_give: comment},
+                success: function (response) {
+                    alert(response['msg'])
+                    window.location.reload()
+                }
+            })
+        }
+
+
+
+
+
+
+        function open_box(){
+            alert('댓글창 열기')
+        }
+        function close_box(){
+            alert('댓글창 닫기기')
+       }
+    </script>
+
+</head>
+
+<body>
+<!--================1.Navbar파트====================-->
+
+    <nav class="navbar">
+        <a class="navbar-brand logo_h" href="/static">
+            <img class="img_logo"
+                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbE4ej%2FbtrAKikSqo1%2FnNGCSsG8KBn96rbIEaftZ1%2Fimg.png"
+                 alt="로고 이미지">
+        </a>
+
+
+        <div class="navbar_search">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+        <ul class="navbar_links">
+            <li><a href=""><i class="fa fa-home-fi"></i></a></li>
+            <li><a href=""><i class="fa fa-plus"></i></a></li>
+            <li><a href=""><i class="fa fa-compass"></i></a></li>
+            <li><a href=""><i class="fa fa-heart"></i></a></li>
+        </ul>
+    </nav>
+<!--================1.Navbar END====================-->
+
+<!--================2.메인 카드 섹션==================-->
+<div class="main_page_all">
+    <div class="main_column">
+
+        <div class="card" >
+            <!--카드 탑-->
+            <div class="card_top">
+                <div class="profile">
+                    <img class="profile_pic"
+                         src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                         alt="프로필 사진">
+                    <p style="padding-left:38px; color: #C7B0FFFF">Tasha Han</p>
+                </div>
+                <div>
+                    <button class="modal_button" data-toggle="modal" data-target="#modal_box"><i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i></button>
+                </div>
+
+            </div>
+            <!--모달-->
+            <div class="modal" tabindex="-1" id="modal_box">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p class="modal-title" style="color:#C7B0FFFF">신고</p>
+                        </div>
+                        <div class="modal-header">
+                            <p class="modal-title" style="color:#C7B0FFFF">팔로우 취소</p>
+                        </div>
+                        <div class="modal-header">
+                            <p class="modal-title">게시물로 이동</p>
+                        </div>
+                        <div class="modal-header">
+                            <p class="modal-title">공유 대상...</p>
+                        </div>
+                        <div class="modal-header">
+                            <p class="modal-title">링크 복사</p>
+                        </div>
+                        <div class="modal-header">
+                            <p class="modal-title">퍼가기</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="modal_dismiss_button" data-bs-dismiss="modal">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--캐러셀-->
+            <div class="carousel slide" id="carouselExampleIndicators1"  data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button class="button_to_1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button class="button_to_2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button class="button_to_3" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd737hn%2FbtrAJJJi2EP%2FccMkRRyFXxpaUZn0NxqA71%2Fimg.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoV5Lg%2FbtrAEHzfio0%2FRUOZqxvNsZl4A5r9OBHXb1%2Fimg.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbMz54Y%2FbtrAFiTvYoK%2F6WR8fEPGK01Spbx7kWGI90%2Fimg.png"
+                             class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!--카드 바디-->
+            <div class="card_body">
+                <div class="icon_bar">
+                    <ul class="icon_bar_left">
+                        <li style="margin-right:30px"><a href=""><i class="fa fa-heart"></i></a></li>
+                        <li style="margin-right:25px"><a href=""><i class="fa fa-chat-bubble"></i></a></li>
+                        <li><a href=""><i class="fa fa-paper-plane" style="width:28px"></i></a></li>
+                    </ul>
+                    <i class="fa fa-bookmark"></i>
+                </div>
+                <div class="card-text">
+                    <h6 class="like_number">좋아요 4,715개</h6>
+                    <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
+
+                    <button class="comment_box" onclick="open_box()">댓글 13개 모두 보기</button>
+                    <div id="comment-lists" class="comment-list">
+                    </div>
+                    <p>1시간 전</p>
+                </div>
+                <div class="card_bottom">
+                    <textarea class="form-control" placeholder="" id="uploading_comment" rows="1">댓글 달기</textarea>
+                    <button class="comment_upload_button" onclick="save_comment()">게시</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" >
+            <div class="card_top">
+                <div class="profile">
+                    <img class="profile_pic"
+                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png" alt="프로필 사진">
+                    <p style="padding-left:38px; color: #766DFFFF">Tasha Han</p>
+                </div>
+                <div>
+                    <i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i>
+                </div>
+
+            </div>
+            <div class="carousel slide" id="carouselExampleIndicators2"  data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd737hn%2FbtrAJJJi2EP%2FccMkRRyFXxpaUZn0NxqA71%2Fimg.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoV5Lg%2FbtrAEHzfio0%2FRUOZqxvNsZl4A5r9OBHXb1%2Fimg.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbMz54Y%2FbtrAFiTvYoK%2F6WR8fEPGK01Spbx7kWGI90%2Fimg.png"
+                             class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card_body">
+                <div class="icon_bar">
+                    <ul class="icon_bar_left">
+                        <li style="margin-right:30px"><a href=""><i class="fa fa-heart"></i></a></li>
+                        <li style="margin-right:25px"><a href=""><i class="fa fa-chat-bubble"></i></a></li>
+                        <li><a href=""><i class="fa fa-paper-plane" style="width:28px"></i></a></li>
+                    </ul>
+                    <i class="fa fa-bookmark"></i>
+
+                </div>
+                <div class="card-text">
+                    <h6 class="like_number">좋아요 4,715개</h6>
+                    <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
+                    <p>댓글 13개 모두 보기</p>
+                    <p>1시간 전</p>
+                </div>
+                <div class="card_bottom">
+                    <textarea class="form-control" placeholder="" id="upload_comment" rows="1">댓글 달기</textarea> <a href="">게시</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" >
+            <div class="card_top">
+                <div class="profile">
+                    <img class="profile_pic"
+                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png" alt="프로필 사진">
+                    <p style="padding-left:38px; color: #766DFFFF">Tasha Han</p>
+                </div>
+                <div>
+                    <i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i>
+                </div>
+
+            </div>
+            <div class="carousel slide" id="carouselExampleIndicators"  data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd737hn%2FbtrAJJJi2EP%2FccMkRRyFXxpaUZn0NxqA71%2Fimg.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoV5Lg%2FbtrAEHzfio0%2FRUOZqxvNsZl4A5r9OBHXb1%2Fimg.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbMz54Y%2FbtrAFiTvYoK%2F6WR8fEPGK01Spbx7kWGI90%2Fimg.png"
+                             class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card_body">
+                <div class="icon_bar">
+                    <ul class="icon_bar_left">
+                        <li style="margin-right:30px"><a href=""><i class="fa fa-heart"></i></a></li>
+                        <li style="margin-right:25px"><a href=""><i class="fa fa-chat-bubble"></i></a></li>
+                        <li><a href=""><i class="fa fa-paper-plane" style="width:28px"></i></a></li>
+                    </ul>
+                    <i class="fa fa-bookmark"></i>
+
+                </div>
+                <div class="card-text">
+                    <h6 class="like_number">좋아요 4,715개</h6>
+                    <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
+                    <p>댓글 13개 모두 보기</p>
+                    <p>1시간 전</p>
+                </div>
+                <div class="card_bottom">
+                    <textarea class="form-control" placeholder="" id="comment" rows="1">댓글 달기</textarea> <a href="">게시</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--================2.메인 카드 섹션 END===============-->
+<!--================3. 사이드 바 START=================-->
+
+    <div class="side_column">
+
+        <div class="name_list" >
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px; color: #C7B0FFFF">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px; color: #C7B0FFFF">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px; color: #C7B0FFFF">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div>
+                        <div class="profile">
+                            <img class="profile_pic"
+                                 src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
+                                 alt="프로필 사진">
+                            <p style="padding-left:30px; color: #C7B0FFFF">Tasha Han</p>
+                        </div>
+                        <p>예스리</p>
+                    </div>
+                    <div>
+                        <p class="namebox_change">전환</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--================3. 사이드 바 END==================-->
+<!--================4. FOOTER START==================-->
+<div class="footer">
+    안녕하세요
+</div>
+<!--================4. FOOTER END==================-->
+
+
+
+<script>
+
+
+</script>
+
+</body>
+</html>
