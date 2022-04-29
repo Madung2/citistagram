@@ -21,6 +21,7 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://use.fortawesome.com/99966411.js"></script>
+    <script src="script.js"></script>
 
     <!-- main css -->
     <link rel="stylesheet" href="../static/style.css">
@@ -61,15 +62,14 @@
                 }
             })
         }
+        $(function() {
+            $('#comment_box1').click(function () {
+                $('#comment-lists').slideDown();
+            })
+
+        });
 
 
-
-
-
-
-        function open_box(){
-            alert('댓글창 열기')
-        }
         function close_box(){
             alert('댓글창 닫기기')
        }
@@ -117,7 +117,7 @@
                     <img class="profile_pic"
                          src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
                          alt="프로필 사진">
-                    <p style="padding-left:38px; color: #C7B0FFFF">Tasha Han</p>
+                    <p style="padding-left:38px;  ">Tasha Han</p>
                 </div>
                 <div>
                     <button class="modal_button" data-toggle="modal" data-target="#modal_box"><i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i></button>
@@ -129,22 +129,22 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <p class="modal-title" style="color:#C7B0FFFF">신고</p>
+                            <p class="modal-title" style="color:#C7B0FFFF"><a href="">신고</a></p>
                         </div>
                         <div class="modal-header">
-                            <p class="modal-title" style="color:#C7B0FFFF">팔로우 취소</p>
+                            <p class="modal-title" style="color:#C7B0FFFF"><a href="">팔로우 취소</a></p>
                         </div>
                         <div class="modal-header">
-                            <p class="modal-title">게시물로 이동</p>
+                            <p class="modal-title"><a href="">게시물로 이동</a></p>
                         </div>
                         <div class="modal-header">
-                            <p class="modal-title">공유 대상...</p>
+                            <p class="modal-title"><a href="">공유 대상...</a></p>
                         </div>
                         <div class="modal-header">
-                            <p class="modal-title">링크 복사</p>
+                            <p class="modal-title"><a href="">링크 복사</a></p>
                         </div>
                         <div class="modal-header">
-                            <p class="modal-title">퍼가기</p>
+                            <p class="modal-title"><a href="">퍼가기</a></p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="modal_dismiss_button" data-bs-dismiss="modal">취소</button>
@@ -188,7 +188,7 @@
                     <h6 class="like_number" id="like_number">좋아요 4,715개</h6>
                     <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
 
-                    <button class="comment_box" onclick="open_box()">댓글 13개 모두 보기</button>
+                    <button id="comment_box1" class="comment_box" onclick="open_box()">댓글 13개 모두 보기</button>
                     <div id="comment-lists" class="comment-list">
                     </div>
                     <p>1시간 전</p>
@@ -349,7 +349,7 @@
                             <img class="profile_pic"
                                  src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
                                  alt="프로필 사진">
-                            <p class="profile_name" style="padding-left:30px; color: #C7B0FFFF">Tasha Han</p>
+                            <p class="profile_name" style="padding-left:30px;">Tasha Han</p>
                         </div>
                         <p>예스리</p>
                     </div>
@@ -363,7 +363,7 @@
                             <img class="profile_pic"
                                  src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
                                  alt="프로필 사진">
-                            <p class="profile_name" style="padding-left:30px; color: #C7B0FFFF">Tasha Han</p>
+                            <p class="profile_name" style="padding-left:30px;">Tasha Han</p>
                         </div>
                         <p>예스리</p>
                     </div>
@@ -377,7 +377,7 @@
                             <img class="profile_pic"
                                  src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
                                  alt="프로필 사진">
-                            <p class="profile_name" style="padding-left:30px; color: #C7B0FFFF">Tasha Han</p>
+                            <p class="profile_name" style="padding-left:30px;">Tasha Han</p>
                         </div>
                         <p>예스리</p>
                     </div>

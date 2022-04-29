@@ -99,6 +99,7 @@
 .modal-content{
     background-color: #080615;
     border: 1px solid antiquewhite;
+    width: 350px;
 }
 .modal-header{
     justify-content:center;
@@ -141,18 +142,19 @@
     width: 150px;
 
 }
+.profile p{
+    color:#C7B0FFFF
+}
+.profile :hover {
+    color:#88F3FFFF
+}
+
 .profile_pic{
     width:25px;
     height:25px;
     float:left;
 }
-.profile_name {
-    color: #C7B0FFFF
-}
 
-.profile_name :hover {
-    color:#88F3FFFF;
-}
 
 
 .modal_button{
@@ -203,6 +205,9 @@
 }
 .comment_box:hover {
     color:#88F3FFFF;
+}
+.comment-list{
+    display:none;
 }
 
 .card_bottom {
