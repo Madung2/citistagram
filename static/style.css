@@ -2,6 +2,7 @@
 * {
     font-family: 'Gugi', cursive;
     color: #b4ab9f;
+
 }
 /*=================== navbar ====================*/
 .navbar{
@@ -80,7 +81,7 @@
     background-color: #080615;
     margin-right:100px;
     padding-top:37px;
-    width: 600px;
+    /*width: 600px;*/
 }
 
 .side_column{
@@ -125,7 +126,8 @@
     border: 2px solid #b4ab9f;
     background-color: #080615;
     border-radius: 7px;
-    width: 570px;
+    /*width: 570px;*/
+
 }
 .card_top{
     height: 50px;
@@ -155,11 +157,13 @@
     float:left;
 }
 
-
+.modar{
+    border:none;
+}
 
 .modal_button{
     background-color:transparent;
-    border:none
+    border:none;
 }
 
 .icon_bar{
@@ -190,18 +194,29 @@
     border:none;
     padding:0;
     margin:0;
+    width:37px;
+    height:37px;
+    vertical-align: center;
 }
 
 .icon_bar_left li button i{
     color:#766DFFFF;
+    font-size: 0.9em;
+    vertical-align: center;
+}
+.airplane button i{
+    font-size: 0.7em;
 }
 
-.icon_bar_left li:hover button i{
+.icon_bar_left li:hover button{
     background-image: -moz-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
-    border-radius: 3px;
-    color:#080615
+    border-radius: 2px;
+
+}
+.icon_bar_left li:hover button i{
+        color:#080615
 }
 .bookmark{
     background-color: transparent;
@@ -279,7 +294,7 @@
     border-color:antiquewhite;
 }
 .name_list{
-    width: 100%;
+
     float: left;
     background-color: #080615;
     border: 2px solid #B4AB9FFF;

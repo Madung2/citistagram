@@ -10,7 +10,7 @@ db = client.dbsparta
 @app.route('/')
 def home():
    return render_template('index.html')
-
+####################첫번째 코멘트창########################################
 @app.route("/insta_comment", methods=["POST"])
 def insta_comment_post():
 

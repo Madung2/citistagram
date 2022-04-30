@@ -26,6 +26,8 @@
     <!-- main css -->
     <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" href="../static/responsive.css">
+    <script src="../script.js"></script>
+
 
     <!--script-->
 <!--================1.댓글기능====================-->
@@ -267,9 +269,9 @@
             <div class="card_body">
                 <div class="icon_bar">
                     <ul class="icon_bar_left">
-                        <li id="like-heart1" style="margin-right:30px"><button><i class="fa fa-heart"></i></button></li>
+                        <li id="like-heart1" style="margin-right:30px;margin-left:12px;"><button><i class="fa fa-heart"></i></button></li>
                         <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
-                        <li><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
+                        <li style="margin-right:20px"><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
                     </ul>
                     <button id="bookmark1" class="bookmark"><i class="fa fa-bookmark"></i></button>
                 </div>
@@ -357,11 +359,11 @@
             <div class="card_body">
                 <div class="icon_bar">
                     <ul class="icon_bar_left">
-                        <li id="like-heart2" style="margin-right:30px"><button><i class="fa fa-heart"></i></button></li>
+                        <li id="like-heart2" style="margin-right:30px;margin-left:12px;"><button><i class="fa fa-heart"></i></button></li>
                         <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
-                        <li><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
+                        <li style="margin-right:20px"><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
                     </ul>
-                    <i class="fa fa-bookmark"></i>
+                    <button id="bookmark2" class="bookmark"><i class="fa fa-bookmark"></i></button>
                 </div>
                 <div class="card-text">
                     <h6 id="counter-text2">좋아요 <span id="counter-click2" class="counter-click">0</span>개</h6>
@@ -445,11 +447,11 @@
             <div class="card_body">
                 <div class="icon_bar">
                     <ul class="icon_bar_left">
-                        <li id="like-heart3" style="margin-right:30px"><button><i class="fa fa-heart"></i></button></li>
+                        <li id="like-heart3" style="margin-right:30px;margin-left:12px;"><button><i class="fa fa-heart"></i></button></li>
                         <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
-                        <li><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
+                        <li style="margin-right:20px" class="airplane"><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
                     </ul>
-                    <i class="fa fa-bookmark"></i>
+                    <button id="bookmark3" class="bookmark"><i class="fa fa-bookmark"></i></button>
                 </div>
                 <div class="card-text">
                     <h6 id="counter-text3">좋아요 <span id="counter-click3" class="counter-click">0</span>개</h6>
@@ -562,7 +564,7 @@
         <li><a href="">해시태그</a></li>
     </ul>
     <div>
-        <div>한국어  ©2022 Citistagram from Tasha</div>
+        <div>한국어  ©2022 Citistagram by Tasha</div>
     </div>
 </div>
 <!--================4. FOOTER END==================-->
@@ -572,31 +574,47 @@
 
     <!--================onclick 하트 좋아요수 증가==================-->
     <script>
-        var counter=0
-            $('#like-heart1').click(function(){
-                counter++;
-                $('#counter-click1').text(counter);
-            });
-        var counter2=0
-            $('#like-heart2').click(function(){
-                counter2++;
-                $('#counter-click2').text(counter2);
-            });
-        var counter3=0
-            $('#like-heart3').click(function(){
-                counter3++;
-                $('#counter-click3').text(counter3);
-            });
-    <!--================onclick 하트 좋아요수 증가==================-->
-    <!--================onclick 북마크 색깔 바꾸기==================-->
+var counter=0
+$('#like-heart1').click(function(){
+    counter++;
+    $('#counter-click1').text(counter);
+});
 
-        var bookmark1 = document.getElementById("bookmark1");
-        bookmark1.addEventListener("click", function () {
-            this.children[0].style.color = "#88F3FFFF";
-            this.querySelector('.fas').style.fontSize = '3rem';
-            this.getElementsByTagName('I')[0].classList.toggle('fa-spin');
-            this.firstElementChild.style.transition = 'color 1.5s ease 1.25s, font-size 0.75s ease-out';
-        }, false);
+var counter2=0
+$('#like-heart2').click(function(){
+    counter2++;
+    $('#counter-click2').text(counter2);
+});
+
+var counter3=0
+    $('#like-heart3').click(function(){
+    counter3++;
+$('#counter-click3').text(counter3);
+});
+<!--================onclick 하트 좋아요수 증가==================-->
+<!--================onclick 북마크 색깔 바꾸기==================-->
+
+var bookmark1 = document.getElementById("bookmark1");
+bookmark1.addEventListener("click", function () {
+    this.children[0].style.color = "#88F3FFFF";
+    this.querySelector('.fas').style.fontSize = '3rem';
+    this.getElementsByTagName('I')[0].classList.toggle('fa-spin');
+    this.firstElementChild.style.transition = 'color 1.5s ease 1.25s, font-size 0.75s ease-out';
+}, false);
+var bookmark2 = document.getElementById("bookmark2");
+bookmark2.addEventListener("click", function () {
+    this.children[0].style.color = "#88F3FFFF";
+    this.querySelector('.fas').style.fontSize = '3rem';
+    this.getElementsByTagName('I')[0].classList.toggle('fa-spin');
+    this.firstElementChild.style.transition = 'color 1.5s ease 1.25s, font-size 0.75s ease-out';
+}, false);
+var bookmark3 = document.getElementById("bookmark3");
+bookmark3.addEventListener("click", function () {
+    this.children[0].style.color = "#88F3FFFF";
+    this.querySelector('.fas').style.fontSize = '3rem';
+    this.getElementsByTagName('I')[0].classList.toggle('fa-spin');
+    this.firstElementChild.style.transition = 'color 1.5s ease 1.25s, font-size 0.75s ease-out';
+}, false);
 
 
     </script>
