@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../static/responsive.css">
 
     <!--script-->
+<!--================1.댓글기능====================-->
     <script>
 
          $(document).ready(function(){
@@ -43,7 +44,7 @@
                     let rows = response['comments']
                     for (let i = 0; i < rows.length; i++) {
                         let comment = rows[i]['comment']
-                        console.log(comment)
+
                         let temp_html = `<p>${comment}</p>`
                         $('#comment-lists').append(temp_html)
                     }
@@ -62,21 +63,28 @@
                 }
             })
         }
+<!--================1.댓글기능 END====================-->
+ <!--================2.댓글 보기 토글====================-->
         $(function() {
             $('#comment_box1').click(function () {
-                $('#comment-lists').slideDown();
+                $('#comment-lists').slideToggle();
             })
 
         });
 
 
-        function close_box(){
-            alert('댓글창 닫기기')
-       }
-       $('.like_number').click(function(){
-           $(this).next().slideToggle();
 
-       });
+
+
+    <!--    let cnt = 0;-->
+    <!--    const button = document.getElementById("like-heart1");-->
+    <!--    const span = document.querySelector(".like_number");-->
+    <!--    function clickCounter(){-->
+    <!--        cnt+=1;-->
+    <!--        span.innerText = `좋아요 ${cnt}개`;-->
+    <!--        console.log(cnt);-->
+    <!--    }-->
+    <!--    button.addEventListener("click", clickCounter);-->
     </script>
 
 </head>
@@ -178,14 +186,14 @@
             <div class="card_body">
                 <div class="icon_bar">
                     <ul class="icon_bar_left">
-                        <li style="margin-right:30px"><a href=""><i class="fa fa-heart"></i></a></li>
+                        <li class="like-heart1" style="margin-right:30px"><a href=""><i class="fa fa-heart"></i></a></li>
                         <li style="margin-right:25px"><a href=""><i class="fa fa-chat-bubble"></i></a></li>
                         <li><a href=""><i class="fa fa-paper-plane" style="width:28px"></i></a></li>
                     </ul>
                     <i class="fa fa-bookmark"></i>
                 </div>
                 <div class="card-text">
-                    <h6 class="like_number" id="like_number">좋아요 4,715개</h6>
+                    <h6 class="like_number" id="like_number">좋아요 0개</h6>
                     <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
 
                     <button id="comment_box1" class="comment_box" onclick="open_box()">댓글 13개 모두 보기</button>

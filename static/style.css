@@ -122,7 +122,7 @@
 /*===================card====================*/
 .card{
     margin-bottom:120px;
-    border: 4px dashed #b4ab9f;
+    border: 2px solid #b4ab9f;
     background-color: #080615;
     border-radius: 7px;
     width: 570px;
@@ -192,7 +192,12 @@
 .icon_bar_left li:hover a i{
     color:#080615;
 }
-
+.fa fa-paper-plane{
+    width:10px;
+}
+.fa fa-bookmark :active{
+    color:#88F3FFFF
+}
 
 .card-text{
     padding-left:50px;
@@ -253,7 +258,7 @@
     width: 100%;
     float: left;
     background-color: #080615;
-    border: 4px dashed #B4AB9FFF;
+    border: 2px solid #B4AB9FFF;
     border-radius: 7px;
 }
 
