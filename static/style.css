@@ -172,6 +172,11 @@
 
 }
 
+
+
+
+
+/*===================여기 수정====================*/
 .icon_bar_left{
     margin:0;
     display:flex;
@@ -179,25 +184,25 @@
     padding-left:0
 
 }
+.icon_bar_left li button{
+    background-color: transparent;
+    border:none;
+}
 
-.icon_bar_left li a i{color:#766DFFFF}
+.icon_bar_left li button i{
+    color:#766DFFFF
+}
 
-.icon_bar_left li:hover a{
+.icon_bar_left li:hover button i{
     background-image: -moz-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     border-radius: 8px;
+    color:#080615
 }
 
-.icon_bar_left li:hover a i{
-    color:#080615;
-}
-.fa fa-paper-plane{
-    width:10px;
-}
-.fa fa-bookmark :active{
-    color:#88F3FFFF
-}
+
+/*===================여기 수정====================*/
 
 .card-text{
     padding-left:50px;

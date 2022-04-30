@@ -64,7 +64,7 @@
             })
         }
 <!--================1.댓글기능 END====================-->
- <!--================2.댓글 보기 토글====================-->
+<!--================2.댓글 보기 토글====================-->
         $(function() {
             $('#comment_box1').click(function () {
                 $('#comment-lists').slideToggle();
@@ -74,17 +74,6 @@
 
 
 
-
-
-    <!--    let cnt = 0;-->
-    <!--    const button = document.getElementById("like-heart1");-->
-    <!--    const span = document.querySelector(".like_number");-->
-    <!--    function clickCounter(){-->
-    <!--        cnt+=1;-->
-    <!--        span.innerText = `좋아요 ${cnt}개`;-->
-    <!--        console.log(cnt);-->
-    <!--    }-->
-    <!--    button.addEventListener("click", clickCounter);-->
     </script>
 
 </head>
@@ -167,7 +156,7 @@
                         <img class="d-block w-100" src="../static/img/wp5167423-city-pop-wallpapers.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="../static/img/wp4765014.jpg" alt="Second slide">
+                        <img class="d-block w-100" src="../static/img/japan-2014616_960_720.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="../static/img/wp4757834-japanese-aesthetics-wallpapers (1).png" alt="Third slide">
@@ -186,18 +175,19 @@
             <div class="card_body">
                 <div class="icon_bar">
                     <ul class="icon_bar_left">
-                        <li class="like-heart1" style="margin-right:30px"><a href=""><i class="fa fa-heart"></i></a></li>
-                        <li style="margin-right:25px"><a href=""><i class="fa fa-chat-bubble"></i></a></li>
-                        <li><a href=""><i class="fa fa-paper-plane" style="width:28px"></i></a></li>
+                        <li id="like-heart1" style="margin-right:30px"><button><i class="fa fa-heart"></i></button></li>
+                        <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
+                        <li><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
                     </ul>
                     <i class="fa fa-bookmark"></i>
                 </div>
                 <div class="card-text">
-                    <h6 class="like_number" id="like_number">좋아요 0개</h6>
+                    <h6 id="counter-text">좋아요 <span id="counter-click1">0</span>개</h6>
                     <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
 
                     <button id="comment_box1" class="comment_box" onclick="open_box()">댓글 13개 모두 보기</button>
                     <div id="comment-lists" class="comment-list">
+                        여기에 뭐 하나만 써봐야겠다.
                     </div>
                     <p>1시간 전</p>
                 </div>
@@ -422,7 +412,11 @@
 
 
 <script>
-
+    var counter=0
+        $('#like-heart1').click(function(){
+            counter++;
+            $('#counter-click1').text(counter);
+        })
 
 </script>
 
