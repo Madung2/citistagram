@@ -14,7 +14,7 @@
     position:fixed;
     width: 100%;
     z-index: 3;
-    height: 65px;
+    height: 70px;
 }
 
 .navbar-brand logo_h{
@@ -50,14 +50,14 @@
 }
 
 .navbar_links li {
-    padding-right: 15px;
+    padding-right: 13px;
     padding-left: 15px;
 
 }
 
 .navbar_links li:hover a{
-    background-color: #221F4BFF;
-    border-radius: 2px;
+    color: #c00000;
+     text-shadow: 0 0 10px blue;
 }
 .navbar_links li a i{
     color:antiquewhite;
@@ -163,7 +163,7 @@
 }
 
 .icon_bar{
-    margin:10px 23px 20px 20px;
+    margin:10px;
     padding:0;
     font-size: 30px;
     display: flex;
@@ -181,43 +181,62 @@
     margin:0;
     display:flex;
     list-style: none;
-    padding-left:0
+    padding-left:0;
+    width:5%
 
 }
 .icon_bar_left li button{
     background-color: transparent;
     border:none;
+    padding:0;
+    margin:0;
 }
 
 .icon_bar_left li button i{
-    color:#766DFFFF
+    color:#766DFFFF;
 }
 
 .icon_bar_left li:hover button i{
     background-image: -moz-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
-    border-radius: 8px;
+    border-radius: 3px;
     color:#080615
+}
+.bookmark{
+    background-color: transparent;
+    border:none;
+}
+.bookmark :hover{
+    color:#88f3ff;
 }
 
 
 /*===================여기 수정====================*/
 
-.card-text{
-    padding-left:50px;
-
+.card-text {
+    padding-left: 46px;
+}
+.counter-click{
+    color:#88f3ff;
+}
+.card-text h6{
+    color:#C7B0FFFF;
 }
 
 .comment_box{
     background-color: transparent;
     border:none;
+    font-size: 0.9em;
 }
 .comment_box:hover {
     color:#88F3FFFF;
 }
 .comment-list{
     display:none;
+}
+.time_passed{
+    font-size: 0.8em;
 }
 
 .card_bottom {
@@ -272,6 +291,9 @@
     margin-top: 100%;
     color:#88F3FFFF;
 }
+.namebox_change:hover{
+    color:#766dff;
+}
 
 .footer{
     background-color: white;
@@ -280,5 +302,22 @@
     background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     width:100%;
     z-index: 4;
+    height: 70px;
+    padding-top:5px;
 }
 
+.footer-contents{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+.footer-contents li a{
+    color: antiquewhite;
+}
+
+.footer div{
+    display: flex;
+    justify-content: center;
+    color:grey;
+}

@@ -26,6 +26,38 @@ def insta_comment_get():
     all_comment = list(db.insta_comment.find({}, {'_id': False}))
     return jsonify({'comments':all_comment})
 
+####################두번째 코멘트창########################################
+@app.route("/insta_comment2", methods=["POST"])
+def insta_comment_post2():
+
+    comment_receive = request.form['comment_give']
+
+    doc = {'comment':comment_receive}
+    db.insta_comment2.insert_one(doc)
+    return jsonify({'msg':'소중한 댓글 감사합니다'})
+
+
+@app.route("/insta_comment2", methods=["GET"])
+def insta_comment_get2():
+    all_comment = list(db.insta_comment2.find({}, {'_id': False}))
+    return jsonify({'comments':all_comment})
+
+####################세번째 코멘트창########################################
+@app.route("/insta_comment3", methods=["POST"])
+def insta_comment_post3():
+
+    comment_receive = request.form['comment_give']
+
+    doc = {'comment':comment_receive}
+    db.insta_comment3.insert_one(doc)
+    return jsonify({'msg':'소중한 댓글 감사합니다'})
+
+
+@app.route("/insta_comment3", methods=["GET"])
+def insta_comment_get3():
+    all_comment = list(db.insta_comment3.find({}, {'_id': False}))
+    return jsonify({'comments':all_comment})
+
 
 
 

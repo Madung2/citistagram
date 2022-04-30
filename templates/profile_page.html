@@ -27,16 +27,33 @@
     <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" href="../static/responsive.css">
     <style>
+        .profile_page_main_body{
+
+            justify-content: center;
+        }
         .head_part{
             display: flex;
             justify-content: center;
         }
         .head_content{
-            background-color: yellowgreen;
+            background-color: greenyellow;
             width: 800px;
-            height: 490px;
-            display: flex;
+            height: 350px;
+            display:flex;
+            flex-direction:row;
         }
+        .head_content img{
+            margin-top: 100px;
+            margin-left: 10px;
+
+        }
+
+
+        .buttons{
+            margin-left: 50px;
+            margin-top: 8px;
+        }
+
         .body_part{
             display: flex;
             justify-content: center;
@@ -47,6 +64,46 @@
             height: 1000px;
 
         }
+        .head_right_column{
+            padding-left: 80px;
+            padding-top: 100px;
+            justify-content: center;
+            flex-direction:row;
+            display: flex;
+        }
+        .head_right_column p{
+            font-size:1.8em;
+        }
+        .head_right_column button{
+            background-color: transparent;
+            border-radius: 4px;
+            border: 1px solid white;
+        }
+        .followers_and_follows{
+            padding-left: 80px;
+            padding-top: 20px;
+            padding-bottom:50px;
+            flex-direction:row;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main_text{
+            padding-left: 80px;
+        }
+        .other_menus{
+            background-color: violet;
+
+            display:flex;
+            justify-content: space-between;
+            flex-direction:row;
+        }
+        .other_menus div{
+            flex-direction: column;
+        }
+        .other_menus div p{
+            text-align: center;
+        }
+
     </style>
 
 </head>
@@ -73,23 +130,65 @@
             <li><a href=""><i class="fa fa-heart"></i></a></li>
         </ul>
     </nav>
-    <div class="head_part">
-        <div class="head_content">
-            <div class="profile_pic_large">
-                <img src="" alt="">
+    <div class="profile_page_main_body">
+        <div class="head_part">
+            <div class="head_content">
+                <div class="profile_pic_large">
+                    <img width="150px" src="../static/img/프로필1_main1.png" alt="매인 사진">
+                </div>
+                <div >
+                    <div class="head_right_column">
+                        <p>Tasha Han</p>
+                        <div class="buttons">
+                            <button>메시지 보내기</button>
+                            <button>Follow</button>
+                            <button>▽</button>
+                            <button>▽</button>
+                        </div>
+
+                    </div>
+                    <div class="followers_and_follows">
+                        <div>게시물 <b>382</b></div>
+                        <div>팔로워 <b>415</b></div>
+                        <div>팔로우 <b>381</b></div>
+                        <span></span>
+                    </div>
+                    <div class="main_text">
+                        Life's not all gloom and despondency✨
+                    </div>
+
+                </div>
             </div>
-            <div>
-                <div>
-            </div>
+        </div>
 
         </div>
-    </div>
-    </div>
-    <div class="body_part">
+        <div class="other_menus">
+            <span></span><span></span><span></span>
+            <div>
+                <img width="70px" src="../static/img/리스트1.png" alt="">
+                <p>Music</p>
+            </div>
+            <div>
+                <img width="70px" src="../static/img/리스트2.png" alt="">
+                <p>City</p>
+            </div>
+            <div>
+                <img width="70px" src="../static/img/리스트3.png" alt="">
+                <p>Skyline</p>
+            </div>
+            <div>
+                <img width="70px" src="../static/img/리스트4.png" alt="">
+                <p>Drive</p>
+            </div>
+            <span></span><span></span><span></span>
+        </div>
+        <div class="body_part">
         <div class="body_content"><div>
     </div>
 
 
+
+    </div>
 
 </body>
 </html>
