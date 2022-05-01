@@ -29,146 +29,6 @@
     <script src="../script.js"></script>
 
 
-    <!--script-->
-<!--================1.댓글기능====================-->
-    <script>
-
-         $(document).ready(function(){
-            show_comment()
-        });
-
-        function show_comment() {
-            $.ajax({
-                type: "GET",
-                url: "/insta_comment",
-                data: {},
-                success: function (response) {
-                    let rows = response['comments']
-
-                    for (let i = 0; i < rows.length; i++) {
-                        let comment = rows[i]['comment']
-                        console.log(rows.length)
-                        let temp_html = `<p>${comment}</p>`
-                        $('#comment-lists1').append(temp_html)
-                        $('#comment-number1').text(rows.length)
-
-
-                    }
-                }
-            });
-        }
-        function save_comment() {
-            let comment = $('#uploading_comment1').val()
-            $.ajax({
-                type: 'POST',
-                url: '/insta_comment',
-                data: {comment_give: comment},
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                }
-            })
-        }
-<!--================1-2.댓글기능 2번째 코멘트====================-->
-         $(document).ready(function(){
-            show_comment2()
-         });
-
-        function show_comment2() {
-            $.ajax({
-                type: "GET",
-                url: "/insta_comment2",
-                data: {},
-                success: function (response) {
-                    let rows = response['comments']
-
-                    for (let i = 0; i < rows.length; i++) {
-                        let comment = rows[i]['comment']
-                        console.log(rows.length)
-                        let temp_html = `<p>${comment}</p>`
-                        $('#comment-lists2').append(temp_html)
-                        $('#comment-number2').text(rows.length)
-
-
-                    }
-                }
-            });
-        }
-        function save_comment2() {
-            let comment = $('#uploading_comment2').val()
-            $.ajax({
-                type: 'POST',
-                url: '/insta_comment2',
-                data: {comment_give: comment},
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                }
-            })
-        }
- <!--================3번째 댓글 만들기====================-->
-
-        $(document).ready(function(){
-            show_comment3()
-         });
-
-        function show_comment3() {
-            $.ajax({
-                type: "GET",
-                url: "/insta_comment3",
-                data: {},
-                success: function (response) {
-                    let rows = response['comments']
-
-                    for (let i = 0; i < rows.length; i++) {
-                        let comment = rows[i]['comment']
-                        console.log(rows.length)
-                        let temp_html = `<p>${comment}</p>`
-                        $('#comment-lists3').append(temp_html)
-                        $('#comment-number3').text(rows.length)
-
-
-                    }
-                }
-            });
-        }
-        function save_comment3() {
-            let comment = $('#uploading_comment3').val()
-            $.ajax({
-                type: 'POST',
-                url: '/insta_comment3',
-                data: {comment_give: comment},
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                }
-            })
-        }
-<!--================2.댓글 보기 토글====================-->
-        $(function() {
-            $('#comment_box1').click(function () {
-                $('#comment-lists1').slideToggle();
-            })
-
-        });
-        $(function() {
-            $('#comment_box2').click(function () {
-                $('#comment-lists2').slideToggle();
-            })
-
-        });
-
-        $(function() {
-            $('#comment_box3').click(function () {
-                $('#comment-lists3').slideToggle();
-            })
-
-        });
-
-
-
-    </script>
-
 </head>
 
 <body>
@@ -208,7 +68,7 @@
                     <img class="profile_pic"
                          src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
                          alt="프로필 사진">
-                    <p style="padding-left:38px;  ">Tasha Han</p>
+                    <p style="padding-left:38px;">Tasha Han</p>
                 </div>
                 <div>
                     <button class="modal_button" data-toggle="modal" data-target="#modal_box1"><i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i></button>
@@ -269,7 +129,7 @@
             <div class="card_body">
                 <div class="icon_bar">
                     <ul class="icon_bar_left">
-                        <li id="like-heart1" style="margin-right:30px;margin-left:12px;"><button><i class="fa fa-heart"></i></button></li>
+                        <li id="like-heart1" style="margin-right:30px;margin-left:12px;"><button onclick="post_like_number1()"><i class="fa fa-heart"></i></button></li>
                         <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
                         <li style="margin-right:20px"><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
                     </ul>
@@ -569,55 +429,6 @@
 </div>
 <!--================4. FOOTER END==================-->
 
-
-
-
-    <!--================onclick 하트 좋아요수 증가==================-->
-    <script>
-var counter=0
-$('#like-heart1').click(function(){
-    counter++;
-    $('#counter-click1').text(counter);
-});
-
-var counter2=0
-$('#like-heart2').click(function(){
-    counter2++;
-    $('#counter-click2').text(counter2);
-});
-
-var counter3=0
-    $('#like-heart3').click(function(){
-    counter3++;
-$('#counter-click3').text(counter3);
-});
-<!--================onclick 하트 좋아요수 증가==================-->
-<!--================onclick 북마크 색깔 바꾸기==================-->
-
-var bookmark1 = document.getElementById("bookmark1");
-bookmark1.addEventListener("click", function () {
-    this.children[0].style.color = "#88F3FFFF";
-    this.querySelector('.fas').style.fontSize = '3rem';
-    this.getElementsByTagName('I')[0].classList.toggle('fa-spin');
-    this.firstElementChild.style.transition = 'color 1.5s ease 1.25s, font-size 0.75s ease-out';
-}, false);
-var bookmark2 = document.getElementById("bookmark2");
-bookmark2.addEventListener("click", function () {
-    this.children[0].style.color = "#88F3FFFF";
-    this.querySelector('.fas').style.fontSize = '3rem';
-    this.getElementsByTagName('I')[0].classList.toggle('fa-spin');
-    this.firstElementChild.style.transition = 'color 1.5s ease 1.25s, font-size 0.75s ease-out';
-}, false);
-var bookmark3 = document.getElementById("bookmark3");
-bookmark3.addEventListener("click", function () {
-    this.children[0].style.color = "#88F3FFFF";
-    this.querySelector('.fas').style.fontSize = '3rem';
-    this.getElementsByTagName('I')[0].classList.toggle('fa-spin');
-    this.firstElementChild.style.transition = 'color 1.5s ease 1.25s, font-size 0.75s ease-out';
-}, false);
-
-
-    </script>
-
+    <script type="text/javascript" src="../static/script.js"></script>
     </body>
 </html>

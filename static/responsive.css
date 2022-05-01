@@ -6,7 +6,7 @@
         width:580px;
     }
 }
-/*-------    여기까지 min-width  -------*/
+/*-------    여기 까지 min-width  -------*/
 
 @media screen and (max-width:1230px){
 
@@ -29,6 +29,7 @@
     .main_column {
         margin-right: 0;
     }
+    .
 }
 
 @media screen and (max-width:650px) {
