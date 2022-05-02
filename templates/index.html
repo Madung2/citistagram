@@ -36,7 +36,7 @@
 
     <nav class="navbar">
         <span></span>
-        <a class="navbar-brand logo_h" href="/static">
+        <a class="navbar-brand logo_h" href="/">
             <img class="img_logo"
                  src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbE4ej%2FbtrAKikSqo1%2FnNGCSsG8KBn96rbIEaftZ1%2Fimg.png"
                  alt="로고 이미지">
@@ -49,7 +49,7 @@
             </form>
         </div>
         <ul class="navbar_links">
-            <li><a href=""><i class="fa fa-home-fi"></i></a></li>
+            <li><a href=""><a href="/"><i class="fa fa-home-fi"></i></a></li>
             <li><a href=""><i class="fa fa-plus"></i></a></li>
             <li><a href=""><i class="fa fa-compass"></i></a></li>
             <li><a href=""><i class="fa fa-heart"></i></a></li>
@@ -61,6 +61,28 @@
 <!--================2.메인 카드 섹션==================-->
 <div class="main_page_all">
     <div class="main_column">
+        <div class="first_bar">
+            <div class="other_menus">
+            <span></span>
+            <div>
+                <img width="70px" src="../static/img/리스트1.png" alt="">
+                <p>Music</p>
+            </div>
+            <div>
+                <img width="70px" src="../static/img/리스트2.png" alt="">
+                <p>City</p>
+            </div>
+            <div>
+                <img width="70px" src="../static/img/리스트3.png" alt="">
+                <p>Skyline</p>
+            </div>
+            <div>
+                <img width="70px" src="../static/img/리스트4.png" alt="">
+                <p>Drive</p>
+            </div>
+            <span></span>
+        </div>
+        </div>
         <div class="card" >
             <!--카드 탑-->
             <div class="card_top">
@@ -68,7 +90,7 @@
                     <img class="profile_pic"
                          src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FefeXMf%2FbtrALvQXSLl%2Fn6fd0dsFfXNbUmOX7EYGBK%2Fimg.png"
                          alt="프로필 사진">
-                    <p style="padding-left:38px;">Tasha Han</p>
+                    <p style="padding-left:38px;"><a href="/profile_page">Tasha Han</a></p>
                 </div>
                 <div>
                     <button class="modal_button" data-toggle="modal" data-target="#modal_box1"><i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i></button>
@@ -128,11 +150,11 @@
             <!--카드 바디-->
             <div class="card_body">
                 <div class="icon_bar">
-                    <ul class="icon_bar_left">
-                        <li id="like-heart1" style="margin-right:30px;margin-left:12px;"><button onclick="post_like_number1()"><i class="fa fa-heart"></i></button></li>
-                        <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
-                        <li style="margin-right:20px"><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
-                    </ul>
+                    <div class="icon_bar_left">
+                        <div id="like-heart1"><button onclick="post_like_number1()"><i class="fa fa-heart"></i></button></div>
+                        <div ><button><i class="fa fa-chat-bubble"></i></button></div>
+                        <div ><button><i class="fa fa-paper-plane" style="width:28px"></i></button></div>
+                    </div>
                     <button id="bookmark1" class="bookmark"><i class="fa fa-bookmark"></i></button>
                 </div>
                 <div class="card-text">
@@ -218,16 +240,16 @@
             <!--카드 바디-->
             <div class="card_body">
                 <div class="icon_bar">
-                    <ul class="icon_bar_left">
-                        <li id="like-heart2" style="margin-right:30px;margin-left:12px;"><button><i class="fa fa-heart"></i></button></li>
-                        <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
-                        <li style="margin-right:20px"><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
-                    </ul>
+                    <div class="icon_bar_left">
+                        <div id="like-heart2"><button onclick="post_like_number2()"><i class="fa fa-heart"></i></button></div>
+                        <div ><button><i class="fa fa-chat-bubble"></i></button></div>
+                        <div ><button><i class="fa fa-paper-plane" style="width:28px"></i></button></div>
+                    </div>
                     <button id="bookmark2" class="bookmark"><i class="fa fa-bookmark"></i></button>
                 </div>
                 <div class="card-text">
                     <h6 id="counter-text2">좋아요 <span id="counter-click2" class="counter-click">0</span>개</h6>
-                    <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
+                    <p class="card_comment">좋아하는 노래 Playlist</p>
 
                     <button id="comment_box2" class="comment_box" onclick="open_box()">댓글 <span id="comment-number2">0</span>개 모두 보기</button>
                     <div id="comment-lists2" class="comment-list"></div>
@@ -249,7 +271,7 @@
                     <p style="padding-left:38px;  ">Tasha Han</p>
                 </div>
                 <div>
-                    <button class="modal_button" data-toggle="modal" data-target="#modal_box1"><i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i></button>
+                    <button class="modal_button" data-toggle="modal" data-target="#modal_box3"><i class="fa fa-dots-three-horizontal" style="color: antiquewhite"></i></button>
                 </div>
 
             </div>
@@ -306,23 +328,25 @@
             <!--카드 바디-->
             <div class="card_body">
                 <div class="icon_bar">
-                    <ul class="icon_bar_left">
-                        <li id="like-heart3" style="margin-right:30px;margin-left:12px;"><button><i class="fa fa-heart"></i></button></li>
-                        <li style="margin-right:25px"><button><i class="fa fa-chat-bubble"></i></button></li>
-                        <li style="margin-right:20px" class="airplane"><button><i class="fa fa-paper-plane" style="width:28px"></i></button></li>
-                    </ul>
+                    <div class="icon_bar_left">
+                        <div id="like-heart3"><button onclick="post_like_number3()"><i class="fa fa-heart"></i></button></div>
+                        <div ><button><i class="fa fa-chat-bubble"></i></button></div>
+                        <div ><button><i class="fa fa-paper-plane" style="width:28px"></i></button></div>
+                    </div>
                     <button id="bookmark3" class="bookmark"><i class="fa fa-bookmark"></i></button>
                 </div>
                 <div class="card-text">
                     <h6 id="counter-text3">좋아요 <span id="counter-click3" class="counter-click">0</span>개</h6>
-                    <p class="card_comment">사진찍을 맛 나는 요즘🥰....</p>
+                    <p class="card_comment">이런 곳에서 걸어다니고 싶다</p>
 
                     <button id="comment_box3" class="comment_box" onclick="open_box()">댓글 <span id="comment-number3">0</span>개 모두 보기</button>
                     <div id="comment-lists3" class="comment-list">
 
                     </div>
                     <p class="time_passed">1시간 전</p>
+
                 </div>
+
                 <div class="card_bottom">
                     <textarea class="form-control" placeholder="" id="uploading_comment3" rows="1">댓글 달기</textarea>
                     <button class="comment_upload_button" onclick="save_comment3()">게시</button>
@@ -337,6 +361,15 @@
 <!--================3. 사이드 바 START=================-->
 
     <div class="side_column">
+        <div class="my_name">
+            <img style="width:80px" src="../static/img/프로필1_main1.png">
+            <div class="my_profile">
+                <p><a href="/profile_page">Tasha Han</a></p>
+                <p>my page</p>
+            </div>
+
+
+        </div>
 
         <div class="name_list" >
             <ul class="list-group list-group-flush">
@@ -346,9 +379,9 @@
                             <img class="profile_pic"
                                  src="../static/img/프로필1.png"
                                  alt="프로필 사진">
-                            <p class="profile_name" style="padding-left:30px;">Tasha Han</p>
+                            <p class="profile_name" style="padding-left:30px;"><a href="/profile_page">Tasha Han</a></p>
                         </div>
-                        <p>예스리</p>
+                        <p class="description">예스리</p>
                     </div>
                     <div>
                         <p class="namebox_change">팔로우</p>
@@ -362,7 +395,7 @@
                                  alt="프로필 사진">
                             <p class="profile_name" style="padding-left:30px;">Yek</p>
                         </div>
-                        <p>좀 많이 소중한 날이었다</p>
+                        <p class="description">좀 많이 소중한 날</p>
                     </div>
                     <div>
                         <p class="namebox_change">팔로우</p>
@@ -376,7 +409,7 @@
                                  alt="프로필 사진">
                             <p class="profile_name" style="padding-left:30px;">KYK</p>
                         </div>
-                        <p>대충 또 오늘이 와버렸다.... 그렇게 됐다.....</p>
+                        <p class="description">대충 또 오늘이 와버렸다.... 그렇게 됐다.....</p>
                     </div>
                     <div>
                         <p class="namebox_change">팔로우</p>
@@ -390,7 +423,7 @@
                                  alt="프로필 사진">
                             <p class="profile_name" style="padding-left:30px; ">Thebrave</p>
                         </div>
-                        <p>점으로 태어나 선으로 살아간다</p>
+                        <p class="description">점으로 태어나 선으로 살아간다</p>
                     </div>
                     <div>
                         <p class="namebox_change">팔로우</p>
@@ -427,7 +460,7 @@
         <div>한국어  ©2022 Citistagram by Tasha</div>
     </div>
 </div>
-<!--================4. FOOTER END==================-->
+<!--================4. FOOTER END====================-->
 
     <script type="text/javascript" src="../static/script.js"></script>
     </body>
