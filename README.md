@@ -52,7 +52,8 @@
 #### 게시글 타임스탬프 로직
 * 제가 처음으로 짠 로직입니다.
 * 발표 전날 밤을 샜고 아침 6시에 완성했습니다.
-![code767](https://user-images.githubusercontent.com/104334219/186159646-1b4088a9-1879-4072-bc84-2a7d32656486.png)
+![code768](https://user-images.githubusercontent.com/104334219/186160627-c9addc0d-4611-4521-b2d5-5ed01e7beea8.png)
+
 
 
 ## 6. 성장 & 회고
