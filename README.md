@@ -43,40 +43,20 @@
 
 ## 5. 핵심 트러블 슈팅
 
-#### 검색창에 active 상태가 true면서, 게시 만료일이 지나지 않은 게시물 sorting 하는 방법 
-
-* 검색창에서 쿼리를 날릴때, 3가지 조건, 검색어가 제목이나 작정자에 해당하면서도, active 상태가 true, 게시물 만료일이 지나지 않은 것을 검색할 필요가 있었습니다.
-
-* 하지만 처음의 전 각각 따로 sorting 하는 방법밖에 떠오르지 않았고, 불필요한 쿼리를 줄이고 싶다고 생각하게 되었습니다.<br> 
-
-* 이 시점쯤에 stackoverflow와 장고 도큐먼트를 좀 더 편하게 사용할 수 있게 되었는데,<br>
-검색어로 'django filter', 'django queries'등을 검색한 결과 Q()를 사용해 3가지 조건을 연결을 할 수 있는 식을 세우게 되었습니다. 
+#### 이미지 업로드 api 중 어려움
+* 처음으로 이미지 업로드 기능을 맡았는데, 아직 문제 해결을 어떻게 해야하는지 전혀 알지 못하던 때라 힘들었습니다. 
+* 검색 실력도 부족했는데 어떻게든 이 기능만큼은 민폐 끼치지 말고 내가 해결하고 싶다는 마음에 [stackoverflow에 게시글](https://stackoverflow.com/questions/72134647/how-to-send-form-data-to-mongodb-using-flask)을 올리기까지 했습니다. 
+* 결과적으로 5일이라는 긴 시간이 걸렸습니다만, 깔끔하게 이미지를 프론트에서 백으로 보내고 시간을 파일명에 넣어 서버에 저장하는 과정을 성공해냈습니다.
 
 
-![code1](https://user-images.githubusercontent.com/104334219/186073479-6e66c1c2-4770-4afb-b4df-692c4164fe7f.png)
+#### 게시글 타임스탬프 로직
+* 제가 처음으로 짠 로직입니다.
+* 발표 전날 밤을 샜고 아침 6시에 완성했습니다.
+![code767](https://user-images.githubusercontent.com/104334219/186159646-1b4088a9-1879-4072-bc84-2a7d32656486.png)
 
 
-## 6. 기타 트러블 슈팅
-
-<details close>
-  <summary>📌 Assertion Error</summary>
-  assertion의 뜻은 '역설'이라는 말인데 개발자가 생각을 못한 문제가 에러가 생겼을때 뜨는 에러입니다.
-  'AssertionError: Expected a Response, HttpResponse or HttpStreamingResponse to be returned from the view, but received a <class 'NoneType'>'이란 에러문구가 떴는데,
-  Response를 원한다고 해서 백에서의 문제일거라 생각하고 하나하나 체크를 해봤는데 큰 문제가 없었습니다.
-  다시 print를 찍어가며 차근차근 에러가 난 곳을 되짚어 가보니 back이 아닌 front 단에서 유저명이 겹치는 문제가 있었습니다.
-</details>
-    
-<details close>
-  <summary>📌 AI 적용시 시간 소요 문제 </summary>
-    처음에는 'Dall-E'모델을 사용해서 text-to-image를 구현하려고 했습니다만, 모델이 많이 무거워서 우리같은 초보자들이 구현하기에는 어렵겠다 싶었고 조금 더 정확도가 떨어지더라도 실용 가능한 속도를 가진 <a href='https://colab.research.google.com/drive/1TBo4saFn1BCSfgXsmREFrUl3zSQFg6CC'>'diffusion'</a>모델을 사용하게 되었습니다. 
-    pytorch를 사용할때 그래픽카드에 맞는 쿠다 버전을 다운받아 사용하는 것도 시간 단축에 큰 도움이 되었습니다.
-
-</details>
-
-
-
-## 7. 성장 & 회고
-* 요즘 가장 핫한 ai 분야 중 하나인 'text to image'를 사용해 볼 수 있었던게 정말 즐거운 경험이 된것 같습니다. 
-* 본격적으로 DRF를 사용한 첫 프로젝트 였는데 시리얼라이저를 쓰면서 좀더 클린한 코드를 쓰고 싶다는 욕심도 갖게 되었습니다. 이후 '파이썬 클린 코드'란 책을 읽으면서 조금씩 제 코드에 대입해 보고 있습니다. 
-
-* 이 프로젝트를 하기 전까지 자바스크립트를 전혀 할 줄 몰랐습니다. 주변사람에 묻고 구글링을 하면서 하나의 프로젝트를 완성하고 나니 편안하게 기본적인 사이트 구성에 필요한 [자바스크립트](https://velog.io/@tasha_han_1234/exqg7cbz)를 쓸 수 있게 되었는데, 이 점도 스스로 뿌듯함을 느낄 수 있었던 부분 입니다.
+## 6. 성장 & 회고
+처음으로 내 손으로 검색을 하고 내 머리로 로직을 짜고 코드를 짜면서, 진심으로 코딩이 즐겁다 짜릿하다는 감각을 느꼈습니다. <br>
+이후 본격적으로 백엔드를 잘하고 싶다는 생각을 하게 되었고,<br> 
+그 마음으로 매일 쉬는 시간을 최소화하면서 공부에 매진할 수 있었던 것 같습니다.<br> 
+가장 기초적인 기술이 구현된 프로젝트이지만 앞으로 개발자의 길을 걸으면서 항상 떠오를 것 같은 프로젝트입니다.
